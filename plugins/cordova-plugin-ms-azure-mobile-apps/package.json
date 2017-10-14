@@ -1,0 +1,71 @@
+{
+  "_from": "cordova-plugin-ms-azure-mobile-apps",
+  "_id": "cordova-plugin-ms-azure-mobile-apps@2.0.0",
+  "_inBundle": false,
+  "_integrity": "sha1-1azRxVJPCPwjCWFfJsjjG64gAzA=",
+  "_location": "/cordova-plugin-ms-azure-mobile-apps",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "cordova-plugin-ms-azure-mobile-apps",
+    "name": "cordova-plugin-ms-azure-mobile-apps",
+    "escapedName": "cordova-plugin-ms-azure-mobile-apps",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-ms-azure-mobile-apps/-/cordova-plugin-ms-azure-mobile-apps-2.0.0.tgz",
+  "_shasum": "d5acd1c5524f08fc2309615f26c8e31bae200330",
+  "_spec": "cordova-plugin-ms-azure-mobile-apps",
+  "_where": "C:\\Users\\carob\\Desktop\\Mobile\\appName\\node_modules",
+  "author": {
+    "name": "Microsoft"
+  },
+  "bugs": {
+    "url": "https://github.com/azure/azure-mobile-apps-cordova-client/issues"
+  },
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-ms-azure-mobile-apps",
+    "platforms": [
+      "android",
+      "ios",
+      "windows8",
+      "windows",
+      "wp8",
+      "browser"
+    ]
+  },
+  "deprecated": false,
+  "description": "Cordova plugin for connecting to Azure Mobile Apps. For more details visit https://azure.microsoft.com/en-us/documentation/learning-paths/appservice-mobileapps/",
+  "homepage": "https://azure.microsoft.com/en-us/documentation/learning-paths/appservice-mobileapps/",
+  "keywords": [
+    "microsoft",
+    "azure",
+    "mobile",
+    "windowsazureofficial",
+    "app",
+    "service",
+    "api",
+    "apps",
+    "ecosystem:cordova",
+    "cordova",
+    "cordova-android",
+    "cordova-ios",
+    "cordova-windows8",
+    "cordova-windows",
+    "cordova-browser"
+  ],
+  "license": "Apache-2.0",
+  "name": "cordova-plugin-ms-azure-mobile-apps",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azure/azure-mobile-apps-cordova-client.git"
+  },
+  "version": "2.0.0"
+}

@@ -1,0 +1,448 @@
+﻿	<!DOCTYPE html>
+	<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="msapplication-tap-highlight" content="no" />
+		<meta name="viewport"
+			  content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+		<!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+		<!-- Good default declaration:
+		* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+		* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+		* Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+			* Enable inline JS: add 'unsafe-inline' to default-src
+			* Enable eval(): add 'unsafe-eval' to default-src
+		* Create your own at http://cspisawesome.com
+		-->
+		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+		
+
+
+		<title>First Application</title>
+	</head>
+
+
+	
+<body>
+
+	<!-- Start of first page -->
+	<div data-role="page" id="home" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goPara" href="#para" class="ui-btn ui-icon-user ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+			<div class="my">
+
+				<div id="deviceready" class="blink">
+					<p class="event listening">Connecting to Device</p>
+					<p class="event received"></p>
+				</div>
+			</div>
+
+			<hr />
+			<center><div id="clock"></div></center>
+			<hr />
+			<center>
+				Info Meteo : <br />
+				<img src="img/logo.png" alt="Smiley face" height="100" width="225">
+			</center>
+			<br />
+			<hr />
+		<button id="testUser">testtt</button>
+
+
+
+				<p>
+					<label for="le_nom">Choix de la variété</label>
+					<select name="le_nom" id="le_nom">
+						<option value="ta_valeur">Fedora</option>
+						<option value="ta_valeur">Carmagnola</option>
+						<option value="ta_valeur">Kompolti</option>
+
+					</select>
+				</p>
+
+				Numero de la plante 
+		<input type="number" name="num_plant"><br>
+			<a id="okkk" href="#plants" class="button_plants">Aller à la plante</a>
+
+		<br />
+			<a href="#cateogry" class="button">Accéder au listing des variétés</a>
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017	
+				<a href="#">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the first page -->
+
+
+	<!-- Start of choose of variety page -->
+	<div data-role="page" id="cateogry" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+			
+			<hr />
+			
+			<center>
+				.... <br />
+			</center>
+			<br />
+			<hr />
+
+
+			<p>
+				<label for="le_nom">Choix de la variété</label>
+				<select name="le_nom" id="le_nom">
+					<option value="ta_valeur">Fedora</option>
+					<option value="ta_valeur">Carmagnola</option>
+					<option value="ta_valeur">Kompolti</option>
+
+				</select>
+			</p>
+
+			<a href="#infoVariety" class="button_variety">Accéder à la variétés</a>
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#home">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the choose of variety page -->
+
+	<!-- Start of info of variety page -->
+	<div data-role="page" id="infoVariety" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+
+			<h1> Variety</h1>
+			<center>
+				<div data-role="collapsibleset">
+					<ul data-role="listview">
+						<li data-role="collapsible">
+							<h3>Informations</h3>
+							<ul data-role="listview">
+								<li>
+									fdafasfsdfsadasfadsfasd
+								</li>
+
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</center>
+
+			<br />
+			<hr />
+
+			
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<a href="#plants" class="button_variety">plant X </a>
+			<br /> <hr />
+			<hr />
+			<a href="#addplants" class="button_variety">Ajouter plante</a>
+
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#home">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the info of variety page -->
+
+
+	<!-- Start of info of variety page -->
+	<div data-role="page" id="plants" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+		
+			<center>
+				<h1><span>	Plant </span> <span> XX</span></h1>
+				<hr />
+				Nom de la plante
+				<input type="text" name="nomPlants"><br>
+				Remarque
+				<input type="text" name="remarquePlants"><br>
+				size
+				<input type="text" name="sizePlants"><br>
+				Step
+				<input type="text" name="stepPlants"><br>
+				
+
+				
+
+			</center>
+
+			<br />
+			<hr />
+		History <br />
+		Remarques - Size - Step 
+			<form>
+				<select name="flip-1" id="flip-1" data-role="slider">
+					<option value="off">Off</option>
+					<option value="on">On</option>
+				</select>
+				<select name="flip-2" id="flip-2" data-role="slider">
+					<option value="off">Off</option>
+					<option value="on">On</option>
+				</select>
+				<select name="flip-3" id="flip-3" data-role="slider">
+					<option value="off">Off</option>
+					<option value="on">On</option>
+				</select>
+			</form>
+
+		<div id="ttest"></div>
+		
+			<div id="historyRemarques" style="visibility: hidden">
+				<h2>Remarques</h2>
+
+				<div>
+					<hr />
+					Date: 26-09-2017 <br />
+					User : Loïc <br />
+					fashfjdsfsafj fadafdsfadsds adfadsfasfdasd afdfsadf
+				</div>
+				<div>
+					<hr />
+					Date: 21-09-2017 <br />
+					User : Loïc <br />
+					fashfjdsfsafj fadafdsfadsds adfadsfasfdasd afdfsadf
+				</div>
+				<div>
+					<hr />
+					Date: 12-09-2017 <br />
+					User : Robert <br />
+					fashfjdsfsafj fadafdsfadsds adfadsfasfdasd afdfsadf
+				</div>
+			</div>
+			
+			<div id="historyStep" style="visibility: hidden">
+				<h2>Step : </h2>
+				<div>
+					<hr />
+					Date: 25-09-2017 <br />
+					User : Loïc <br />
+					Step : 5
+
+				</div>
+				<div>
+					<hr />
+					Date: 12-09-2017 <br />
+					User : Loïc <br />
+					Step : 3
+
+				</div>
+				<div>
+					<hr />
+					Date: 01-09-2017 <br />
+					User : Loïc <br />
+					Step : 2
+
+				</div>
+
+			</div>
+
+			<div id="historySize" style="visibility: hidden">
+				<h2>Size : </h2>
+				<div>
+					<hr />
+					Date: 25-09-2017 <br />
+					User : Loïc <br />
+					Step : 120 cm
+
+				</div>
+				<div>
+					<hr />
+					Date: 12-09-2017 <br />
+					User : Loïc <br />
+					Step : 77 cm
+
+				</div>
+				<div>
+					<hr />
+					Date: 01-09-2017 <br />
+					User : Loïc <br />
+					Step : 55 cm 
+
+				</div>
+
+			</div>
+
+				
+
+
+
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#home">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the info of variety page -->
+
+	<!-- Start of para page -->
+	<div data-role="page" id="para" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+			
+
+		Choix de l'user 
+			<ul id='todo-items'></ul>
+
+
+			<br />
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the first page -->
+
+
+
+
+	<script src="js/jquery.mobil-1.4.5.min.js"></script>
+	<script src="js/jquery11.js"></script>
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/clockk.js"></script>
+
+	<script type="text/javascript" src="js/clock.js"></script>
+
+	<script type="text/javascript" src="js/immotri.js"></script>
+
+	<script type="text/javascript">
+            app.initialize();
+	</script>
+	<script>
+		$(document).on("pagecreate", function () {
+			$(document).on("pagecontainershow", function () {
+				$(".ui-content").height(getRealContentHeight());
+			})
+
+			$(window).on("resize orientationchange", function () {
+				$(".ui-content").height(getRealContentHeight());
+			})
+
+			function getRealContentHeight() {
+				var activePage = $.mobile.pageContainer.pagecontainer("getActivePage"),
+					screen = $.mobile.getScreenHeight(),
+					header = $(".ui-header").hasClass("ui-header-fixed") ? $(".ui-header").outerHeight() - 1 : $(".ui-header").outerHeight(),
+					footer = $(".ui-footer").hasClass("ui-footer-fixed") ? $(".ui-footer").outerHeight() - 1 : $(".ui-footer").outerHeight(),
+					contentMargins = $(".ui-content", activePage).outerHeight() - $(".ui-content", activePage).height();
+				var contentHeight = screen - header - footer - contentMargins;
+
+				return contentHeight;
+			}
+		});
+	</script>
+	<script>
+		
+	</script>
+
+
+</body>
+</html>
