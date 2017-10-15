@@ -1,21 +1,4 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
+
 (function () {
 	"use strict";
 
@@ -152,10 +135,6 @@
 			// Initialize the sync context
 			syncContext = client.getSyncContext();
 
-			// Define an overly simplified push handler that discards
-			// local changes whenever there is an error or conflict.
-			// Note that a real world push handler will have to take action according
-			// to the nature of conflict.
 			syncContext.pushHandler = {
 				onConflict: function (pushError) {
 					return pushError.cancelAndDiscard();
@@ -197,9 +176,10 @@
 
 		refreshDisplay();
 
-		$('#add-item').submit(addItemHandler);
 		$('#refresh').on('click', refreshDisplay);
 		$("#testUser").on('click', alertUser);
+		$('#addUserCloud').on('click', addUser);
+
 	}
 
 
@@ -229,14 +209,13 @@
 
 
 
-	function createUser(item) {
+	function createUser(userr) {
 		return $('<div>')
-			.attr('data-user-id', item.id)
+			.attr('data-user-id', userr.id)
 			//  .append($('<button class="item-delete">Delete</button>'))
 			//  .append($('<input type="checkbox" class="item-complete">').prop('checked', item.complete))
 			//	.append($('<div>')
-			.append($('<h1>').text("USER"))
-			.append($('<p class="item-name">').text(item.name))
+			.append($('<p class="item-name">').text(userr.name))
 			// .append($('<button class="user-delete">Delete</button>'))
 			.append($('<button class="user-choose">Choose</button>'))
 			.append($('<br>'))
@@ -246,9 +225,9 @@
 
 	function createUserList(items) {
 		var listItems = $.map(items, createUser);
-		$('#todo-items').empty().append(listItems).toggle(listItems.length > 0);
+		$('#todo-user').empty().append(listItems).toggle(listItems.length > 0);
 
-		$('.user-delete').on('click', deleteItemHandler);
+		$('.user-delete').on('click', deleteUser);
 		$('.user-choose').on('click', chooseUser);
 
 		//$('.item-text').on('change', updateItemTextHandler);
@@ -268,11 +247,10 @@
 	}
 
 
-	function addItemHandler(event) {
-		//   var textbox = $('#new-item-text'),
-		//	     itemText = textbox.val();
+	function addUser(event) {
+		var textbox = $('#userNameAdd'),
+			itemText = textbox.val();
 
-		updateSummaryMessage('Adding New Item');
 		if (itemText !== '') {
 			userTable.insert({
 				name: itemText,
@@ -284,9 +262,8 @@
 		event.preventDefault();
 	}
 
-	function deleteItemHandler(event) {
+	function deleteUser(event) {
 		var itemId = getUser(event.currentTarget);
-		updateSummaryMessage('Deleting Item in Azure');
 		userTable
 			.del({ id: itemId })   // Async send the deletion to backend
 			.then(displayItems, handleError); // Update the UI
@@ -309,7 +286,7 @@
 	}
 	function infoUser(item) {
 		user = item.name;
-		userStorage.setItem((item.name), (item.name));
+		userStorage.setItem(0, (item.name));
 	}
 
 	
@@ -319,7 +296,7 @@
 			newText = $(event.currentTarget).val();
 
 		updateSummaryMessage('Updating Item in Azure');
-		todoItemTable
+		userTable
 			.update({ id: itemId, text: newText })  // Async send the update to backend
 			.then(displayItems, handleError); // Update the UI
 		event.preventDefault();
@@ -331,7 +308,7 @@
 			isComplete = $(event.currentTarget).prop('checked');
 
 		updateSummaryMessage('Updating Item in Azure');
-		todoItemTable
+		userTable
 			.update({ id: itemId, complete: isComplete })  // Async send the update to backend
 			.then(displayItems, handleError);        // Update the UI
 	}

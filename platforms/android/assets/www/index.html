@@ -36,7 +36,9 @@
 	<div data-role="page" id="home" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
-			<a id="goPara" href="#para" class="ui-btn ui-icon-user ui-btn-icon-notext ui-corner-all"></a>
+			<a id="goPara" href="#para" class="ui-btn ui-icon-user ui-btn-icon-notext ui-corner-left"></a>
+			<a id="goPara" href="#modif" class="ui-btn ui-icon-bullets ui-btn-icon-notext ui-corner-right"></a>
+
 
 			<h1>Nostras - Cloud</h1>
 		</div><!-- /header -->
@@ -382,9 +384,10 @@
 
 		<div role="main" class="ui-content">
 			
+			<button type='button' id='refresh'>Refresh</button>
 
 		Choix de l'user 
-			<ul id='todo-items'></ul>
+			<ul id='todo-user'></ul>
 
 
 			<br />
@@ -398,7 +401,55 @@
 			</center>
 		</div><!-- /footer -->
 	</div>
-	<!-- end of the first page -->
+	<!-- end of the para page -->
+
+
+	<!-- Start of modif  page -->
+	<div data-role="page" id="modif" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+
+			<form id='add-user'>
+				<button type='button' id="addUserCloud">Ajouter</button>
+
+				<div>
+					<label for="userNameAdd">User:</label>
+					<input type="text" name="userNameAdd" id="userNameAdd" value="">
+				</div>
+
+			</form>
+
+			<form id='add-category'>
+				<button type='button' id="addCategoryCloud">Ajouter</button>
+
+				<div>
+					<label for="categoryNameAdd">User:</label>
+					<input type="text" name="categoryNameAdd" id="categoryNameAdd" value="">
+					<label for="categoryInfoAdd">User:</label>
+					<input type="text" name="categoryInfoAdd" id="categoryInfoAdd" value="">
+
+				</div>
+
+			</form>
+
+			<br />
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the modif page -->
 
 
 
