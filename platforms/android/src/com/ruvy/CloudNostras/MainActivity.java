@@ -17,7 +17,7 @@
        under the License.
  */
 
-package com.phonegap.Ex2;
+package com.ruvy.CloudNostras;
 
 import android.os.Bundle;
 import org.apache.cordova.*;

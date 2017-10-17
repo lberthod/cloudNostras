@@ -1,20 +1,7 @@
 (function ($) {
 	"use strict";
 
-	var addition = function () {
-		var myswitch = $(this);
-		var show = myswitch[0].selectedIndex == 1 ? true : false;
 
-		if (show) {
-
-			$('#show-me').fadeIn('slow');
-			$('#first-me').fadeOut();
-		} else {
-
-			$('#first-me').fadeIn('slow');
-			$('#show-me').fadeOut();
-		}
-	};
 
 	var flip1 = function () {
 		var myswitch = $(this);
@@ -25,6 +12,7 @@
 			$('#historyRemarques').css('visibility', 'visible');
 
 		} else {
+			$("#historyRemarques").insertAfter("#historyStep");   
 
 			$('#historyRemarques').css('visibility', 'hidden');
 		}
@@ -39,6 +27,7 @@
 			$('#historyStep').css('visibility', 'visible');
 
 		} else {
+			$("#historyStep").insertAfter("#historyRemarques");   
 
 			$('#historyStep').css('visibility', 'hidden');
 		}
@@ -54,6 +43,7 @@
 			$('#historySize').css('visibility', 'visible');
 
 		} else {
+			$("#historySize").insertAfter("#historyRemarques");   
 
 			$('#historySize').css('visibility', 'hidden');
 		}

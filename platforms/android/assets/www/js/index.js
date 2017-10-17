@@ -2,7 +2,8 @@
 (function () {
 	"use strict";
 
-	var userStorage = window.localStorage;
+	var localStorage = window.localStorage;
+
 
 
 	var client, // Connection to the Azure Mobile App backend
@@ -82,6 +83,7 @@
 			columnDefinitions: {
 				id: 'string',
 				deleted: 'boolean',
+				title: 'string',
 				text: 'string',
 				complete: 'boolean',
 				version: 'string'
@@ -92,6 +94,9 @@
 			name: plantsName,
 			columnDefinitions: {
 				id: 'string',
+				category: 'string',
+				num: 'number',
+				name: 'string',
 				deleted: 'boolean',
 				text: 'string',
 				complete: 'boolean',
@@ -179,16 +184,24 @@
 		$('#refresh').on('click', refreshDisplay);
 		$("#testUser").on('click', alertUser);
 		$('#addUserCloud').on('click', addUser);
+		$('#addCategoryCloud').on('click', addCategory);
+		$('#addPlantCloud').on('click', addPlants);
+		$('#nextPlants').on('click', nextPlants);
+		$('#lastPlants').on('click', lastPlants);
 
+
+
+
+		$('#goVariety').on('click', goVariety);
 	}
 
 
 	function refreshDisplay() {
-
 		if (useOfflineSync) {
 			syncLocalTable().then(displayUsers);
 		} else {
 			displayUsers();
+			displayCategories();
 		}
 	}
 
@@ -200,10 +213,19 @@
 			});
 	}
 
+	function handleError(error) {
+		var text = error + (error.request ? ' - ' + error.request.status : '');
+		console.error(text);
+		$('#errorlog').append($('<li>').text(text));
+	}
+
+
+	// method for user----------------------------------------------------------------------------------------------------USER
+
 	function displayUsers() {
 		userTable
-			.where({ deleted: false })    
-			.read()                      
+			.where({ deleted: false })
+			.read()
 			.then(createUserList, handleError);
 	}
 
@@ -212,11 +234,7 @@
 	function createUser(userr) {
 		return $('<div>')
 			.attr('data-user-id', userr.id)
-			//  .append($('<button class="item-delete">Delete</button>'))
-			//  .append($('<input type="checkbox" class="item-complete">').prop('checked', item.complete))
-			//	.append($('<div>')
 			.append($('<p class="item-name">').text(userr.name))
-			// .append($('<button class="user-delete">Delete</button>'))
 			.append($('<button class="user-choose">Choose</button>'))
 			.append($('<br>'))
 			;
@@ -234,18 +252,9 @@
 		//	$('.item-password').on('change', updateItemCompleteHandler);
 	}
 
- 
-	function handleError(error) {
-		var text = error + (error.request ? ' - ' + error.request.status : '');
-		console.error(text);
-		$('#errorlog').append($('<li>').text(text));
-	}
-
-
 	function getUser(el) {
 		return $(el).closest('div').attr('data-user-id');
 	}
-
 
 	function addUser(event) {
 		var textbox = $('#userNameAdd'),
@@ -258,7 +267,7 @@
 			}).then(displayItems, handleError);
 		}
 
-		//  textbox.val('').focus();
+		textbox.val('').focus();
 		event.preventDefault();
 	}
 
@@ -269,7 +278,6 @@
 			.then(displayItems, handleError); // Update the UI
 		event.preventDefault();
 	}
-
 
 	function chooseUser(event) {
 		var user1 = getUser(event.currentTarget);
@@ -282,38 +290,271 @@
 
 	function UserList(items) {
 		var listItems = $.map(items, infoUser);
-		
-	}
-	function infoUser(item) {
-		user = item.name;
-		userStorage.setItem(0, (item.name));
 	}
 
-	
+	function infoUser(item) {
+		user = item.name;
+		localStorage.setItem(0, (item.name));
+	}
+	// end method for user
+
+	// method for category--------------------------------------------------------------------------------------------CATEGORY
+	function displayCategories() {
+		categoryTable
+			.where({ deleted: false })
+			.read()
+			.then(createCategoryList, handleError);
+	}
+
+	function createCategory(cat) {
+		return $('<option>')
+			.attr('data-cat-id', cat.title)
+			.text(cat.title)
+			;
+	}
+
+	function createCategoryList(items) {
+		var listItems = $.map(items, createCategory);
+		var listItems1 = $.map(items, createCategory);
+		var listItems2 = $.map(items, createCategory);
+
+		$('#todo-cat').empty().append(listItems).toggle(listItems.length > 0);
+		$('#todo-cat2').empty().append(listItems1).toggle(listItems1.length > 0);
+		$('#todo-cat3').empty().append(listItems2).toggle(listItems2.length > 0);
+
+		$('.cat-delete').on('click', deleteCategory);
+		$('.cat-choose').on('click', chooseCategory);
+	}
+
+	function getCategory(el) {
+		return $(el).closest('select').attr('data-cat-id');
+	}
+
+	function addCategory(event) {
+		var nameBox = $('#categoryNameAdd'),
+			nameText = nameBox.val();
+
+		var infoBox = $('#categoryInfoAdd'),
+			infoText = infoBox.val();
+
+
+		if (nameText !== '') {
+			categoryTable.insert({
+				title: nameText,
+				text: infoText
+			}).then(displayCategories, handleError);
+		}
+
+		//  textbox.val('').focus();
+		event.preventDefault();
+	}
 
 	function updateItemTextHandler(event) {
 		var itemId = getUser(event.currentTarget),
 			newText = $(event.currentTarget).val();
 
-		updateSummaryMessage('Updating Item in Azure');
 		userTable
 			.update({ id: itemId, text: newText })  // Async send the update to backend
-			.then(displayItems, handleError); // Update the UI
+			.then(displayCategories, handleError); // Update the UI
 		event.preventDefault();
 	}
-
 
 	function updateItemCompleteHandler(event) {
 		var itemId = getUser(event.currentTarget),
 			isComplete = $(event.currentTarget).prop('checked');
 
-		updateSummaryMessage('Updating Item in Azure');
 		userTable
 			.update({ id: itemId, complete: isComplete })  // Async send the update to backend
-			.then(displayItems, handleError);        // Update the UI
+			.then(displayCategories, handleError);        // Update the UI
 	}
 
 	function alertUser() {
-		alert(userStorage.getItem(userStorage.key(0)));	
+		alert(localStorage.getItem(localStorage.key(0)));
+		alert(localStorage.getItem(localStorage.key(1)));
 	}
+
+	function goVariety(event) {
+		var cat = $('#todo-cat2').val();
+		localStorage.setItem(1, (cat));
+		$('#nameVariety').text(cat);
+		findCategoryName(cat);
+		findPlantforCategory(cat);
+	}
+
+	function findCategoryName(titleN) {
+		return categoryTable
+			.where({ title: titleN })     // Set up the query
+			.read()                         // Read the results
+			.then(catName, handleError);
+		event.preventDefault();
+	}
+
+	function catName(cats) {
+		return listItems = $.map(cats, infoCat);
+	}
+
+	function infoCat(cat) {
+		$('#infoVariety1').text(cat.text);
+		return;
+	}
+
+	// end method for category
+
+	// start methods for plants------------------------------------------------------------------------------------------PLANTS
+
+	function getPlants(el) {
+		return $(el).closest('div').attr('data-plant-id');
+	}
+
+	function addPlants(event) {
+		var cate = $('#todo-cat3').val();
+
+		getPlantsforLastID(cate);
+
+	}
+
+
+
+	function findPlantforCategory(catN) {
+		return plantsTable
+			.where({ category: catN })     // Set up the query
+			.read()                         // Read the results
+			.then(createPlantList, handleError);
+		event.preventDefault();
+	}
+
+	function createPlants(plant) {
+		return $('<div>')
+			.attr('data-plant-id', plant.id)
+			.text(plant.category + " - " + plant.num)
+			.append($('<a class="plant-choose" href="#plants">GO</a>'))
+			;
+	}
+
+	function createPlantList(items) {
+		var listItems = $.map(items, createPlants);
+
+		$('#todo-plants').empty().append(listItems).toggle(listItems.length > 0);
+		$('.plant-choose').on('click', choosePlant);
+
+		//	$('.item-text').on('change', updateItemTextHandler);
+		//	$('.item-password').on('change', updateItemCompleteHandler);
+	}
+
+	function choosePlant(event) {
+
+		var plant = getPlants(event.currentTarget);
+		getPlantsforID(plant);
+
+	}
+
+	function getPlantsforID(plantID) {
+
+		return plantsTable
+			.where({ id: plantID })     // Set up the query
+			.read()                         // Read the results
+			.then(createPlantUniqueList, handleError);
+		event.preventDefault();
+	}
+
+	function getPlantsforNum(plantNum, cat) {
+
+		return plantsTable
+			.where({
+				num: plantNum,
+				category: cat,
+			})     // Set up the query
+			.read()                         // Read the results
+			.then(createPlantUniqueList, handleError);
+		event.preventDefault();
+	}
+
+	function createPlantUniqueList(items) {
+		return listItems = $.map(items, createUniquePlants);
+	}
+
+	function createUniquePlants(plant) {
+		localStorage.setItem(3, (plant.num));
+
+		localStorage.setItem(4, (plant.category));
+
+
+
+		$('#titlePlant').text(plant.category + " - " + plant.num);
+	}
+
+	function getPlantsforLastID(categoryN) {
+		return plantsTable
+			.where({
+				category: categoryN
+			})     // Set up the query
+			.read()                         // Read the results
+			.then(createPlantUniqueForID, handleError);
+		event.preventDefault();
+	}
+
+	function createPlantUniqueForID(items) {
+		var nameBox = $('#numPlants'),
+			nameText = nameBox.val();
+
+		var cate = $('#todo-cat3').val();
+
+		if (items.length === 0) {
+			if (nameText !== '') {
+				plantsTable.insert({
+					name: nameText,
+					category: cate,
+					num: 1,
+				}).then(displayCategories, handleError);
+			}
+
+			nameBox.val('').focus();
+			event.preventDefault();
+			return;
+		} else {
+			var idgive = items[items.length - 1].num;
+			var idsent = parseInt(idgive, 10);
+
+			idsent = idsent + 1;
+
+			if (nameText !== '') {
+				plantsTable.insert({
+					name: nameText,
+					category: cate,
+					num: idsent,
+				}).then(displayCategories, handleError);
+			}
+
+			nameBox.val('').focus();
+			event.preventDefault();
+			return;
+		}
+
+
+	}
+
+	function nextPlants() {
+
+
+		var numString = localStorage.getItem(localStorage.key(2));
+		var numInt = parseInt(numString, 10);
+		numInt = numInt + 1;
+		var category = localStorage.getItem(localStorage.key(3));
+
+
+		getPlantsforNum(numInt, category);
+
+	}
+	function lastPlants() {
+
+
+		var numString = localStorage.getItem(localStorage.key(2));
+		var numInt = parseInt(numString, 10);
+		numInt = numInt - 1;
+		var category = localStorage.getItem(localStorage.key(3));
+
+		getPlantsforNum(numInt, category);
+
+	}
+
 })();

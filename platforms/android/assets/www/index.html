@@ -1,38 +1,38 @@
-﻿	<!DOCTYPE html>
-	<html>
+﻿<!DOCTYPE html>
+<html>
 
-	<head>
-		<meta charset="utf-8" />
-		<meta name="format-detection" content="telephone=no" />
-		<meta name="msapplication-tap-highlight" content="no" />
-		<meta name="viewport"
-			  content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-		<!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-		<!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-		<!-- Good default declaration:
-		* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-		* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-		* Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-			* Enable inline JS: add 'unsafe-inline' to default-src
-			* Enable eval(): add 'unsafe-eval' to default-src
-		* Create your own at http://cspisawesome.com
-		-->
-		<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
-		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-		<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-		
-
-
-		<title>First Application</title>
-	</head>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport"
+		  content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+	<!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+	<!-- Good default declaration:
+	* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+	* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+	* Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+		* Enable inline JS: add 'unsafe-inline' to default-src
+		* Enable eval(): add 'unsafe-eval' to default-src
+	* Create your own at http://cspisawesome.com
+	-->
+	<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 
 
-	
+
+	<title>First Application</title>
+</head>
+
+
+
 <body>
 
-	<!-- Start of first page -->
+	<!-- Start of first page.........................................................................................................HOME PAGE -->
 	<div data-role="page" id="home" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
@@ -61,40 +61,35 @@
 			</center>
 			<br />
 			<hr />
-		<button id="testUser">testtt</button>
+			<button id="testUser">testtt</button>
 
 
 
-				<p>
-					<label for="le_nom">Choix de la variété</label>
-					<select name="le_nom" id="le_nom">
-						<option value="ta_valeur">Fedora</option>
-						<option value="ta_valeur">Carmagnola</option>
-						<option value="ta_valeur">Kompolti</option>
+			<p>
+				<label for="le_nom">Choix de la variété</label>
+				<select id='todo-cat'></select>
 
-					</select>
-				</p>
+			</p>
 
-				Numero de la plante 
-		<input type="number" name="num_plant"><br>
+			Numero de la plante
+			<input type="number" name="num_plant"><br>
 			<a id="okkk" href="#plants" class="button_plants">Aller à la plante</a>
 
-		<br />
+			<br />
 			<a href="#cateogry" class="button">Accéder au listing des variétés</a>
 
 		</div><!-- /content -->
 
 		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 			<center>
-				© Nostras 2017	
+				© Nostras 2017
 				<a href="#">Nostras</a>
 			</center>
 		</div><!-- /footer -->
 	</div>
 	<!-- end of the first page -->
 
-
-	<!-- Start of choose of variety page -->
+	<!-- Start of choose of variety page...........................................................................................CHOOSE OF VARIETY -->
 	<div data-role="page" id="cateogry" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
@@ -102,9 +97,9 @@
 		</div><!-- /header -->
 
 		<div role="main" class="ui-content">
-			
+
 			<hr />
-			
+
 			<center>
 				.... <br />
 			</center>
@@ -114,15 +109,10 @@
 
 			<p>
 				<label for="le_nom">Choix de la variété</label>
-				<select name="le_nom" id="le_nom">
-					<option value="ta_valeur">Fedora</option>
-					<option value="ta_valeur">Carmagnola</option>
-					<option value="ta_valeur">Kompolti</option>
-
-				</select>
+				<select id='todo-cat2'></select>
 			</p>
 
-			<a href="#infoVariety" class="button_variety">Accéder à la variétés</a>
+			<a href="#infoVariety" class="button_variety" id="goVariety">Accéder à la variétés</a>
 
 		</div><!-- /content -->
 
@@ -135,7 +125,7 @@
 	</div>
 	<!-- end of the choose of variety page -->
 
-	<!-- Start of info of variety page -->
+	<!-- Start of info of variety page........................................................................................... INFO OF VARIETY -->
 	<div data-role="page" id="infoVariety" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
@@ -144,83 +134,24 @@
 
 		<div role="main" class="ui-content">
 
-			<h1> Variety</h1>
+			<h1 id="nameVariety"></h1>
 			<center>
-				<div data-role="collapsibleset">
-					<ul data-role="listview">
-						<li data-role="collapsible">
-							<h3>Informations</h3>
-							<ul data-role="listview">
-								<li>
-									fdafasfsdfsadasfadsfasd
-								</li>
 
-							</ul>
-						</li>
-					</ul>
+				<h3>Informations</h3>
+				<div id="infoVariety1">
 				</div>
+
+
 			</center>
 
 			<br />
 			<hr />
+			<ul id='todo-plants'></ul>
 
-			
-			<a href="#plants" class="button_variety">plant X </a>
+
 			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<a href="#plants" class="button_variety">plant X </a>
-			<br /> <hr />
-			<hr />
-			<a href="#addplants" class="button_variety">Ajouter plante</a>
+
+			<!--	<a href="#addplants" class="button_variety">Ajouter plante</a> -->
 
 
 		</div><!-- /content -->
@@ -234,8 +165,7 @@
 	</div>
 	<!-- end of the info of variety page -->
 
-
-	<!-- Start of info of variety page -->
+	<!-- Start of info of plants page............................................................................................PLANTS -->
 	<div data-role="page" id="plants" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
@@ -243,28 +173,27 @@
 		</div><!-- /header -->
 
 		<div role="main" class="ui-content">
-		
+
 			<center>
-				<h1><span>	Plant </span> <span> XX</span></h1>
+				<h1 id="titlePlant">  a</h1>
+				<a id="lastPlants"> LAST</a>
+
+				<a id="nextPlants"> NEXT</a>
 				<hr />
 				Nom de la plante
-				<input type="text" name="nomPlants"><br>
+				<input type="text" name="nomPlants" id="nomPlants"><br>
 				Remarque
 				<input type="text" name="remarquePlants"><br>
 				size
 				<input type="text" name="sizePlants"><br>
 				Step
 				<input type="text" name="stepPlants"><br>
-				
-
-				
-
 			</center>
 
 			<br />
 			<hr />
-		History <br />
-		Remarques - Size - Step 
+			History <br />
+			Remarques - Size - Step
 			<form>
 				<select name="flip-1" id="flip-1" data-role="slider">
 					<option value="off">Off</option>
@@ -280,87 +209,26 @@
 				</select>
 			</form>
 
-		<div id="ttest"></div>
-		
+			<div id="ttest"></div>
+
 			<div id="historyRemarques" style="visibility: hidden">
 				<h2>Remarques</h2>
 
 				<div>
-					<hr />
-					Date: 26-09-2017 <br />
-					User : Loïc <br />
-					fashfjdsfsafj fadafdsfadsds adfadsfasfdasd afdfsadf
-				</div>
-				<div>
-					<hr />
-					Date: 21-09-2017 <br />
-					User : Loïc <br />
-					fashfjdsfsafj fadafdsfadsds adfadsfasfdasd afdfsadf
-				</div>
-				<div>
-					<hr />
-					Date: 12-09-2017 <br />
-					User : Robert <br />
-					fashfjdsfsafj fadafdsfadsds adfadsfasfdasd afdfsadf
-				</div>
-			</div>
-			
-			<div id="historyStep" style="visibility: hidden">
-				<h2>Step : </h2>
-				<div>
-					<hr />
-					Date: 25-09-2017 <br />
-					User : Loïc <br />
-					Step : 5
 
 				</div>
-				<div>
-					<hr />
-					Date: 12-09-2017 <br />
-					User : Loïc <br />
-					Step : 3
+
+				<div id="historyStep" style="visibility: hidden">
+					<h2>Step : </h2>
 
 				</div>
-				<div>
-					<hr />
-					Date: 01-09-2017 <br />
-					User : Loïc <br />
-					Step : 2
+
+				<div id="historySize" style="visibility: hidden">
+					<h2>Size : </h2>
 
 				</div>
 
 			</div>
-
-			<div id="historySize" style="visibility: hidden">
-				<h2>Size : </h2>
-				<div>
-					<hr />
-					Date: 25-09-2017 <br />
-					User : Loïc <br />
-					Step : 120 cm
-
-				</div>
-				<div>
-					<hr />
-					Date: 12-09-2017 <br />
-					User : Loïc <br />
-					Step : 77 cm
-
-				</div>
-				<div>
-					<hr />
-					Date: 01-09-2017 <br />
-					User : Loïc <br />
-					Step : 55 cm 
-
-				</div>
-
-			</div>
-
-				
-
-
-
 
 		</div><!-- /content -->
 
@@ -372,8 +240,8 @@
 		</div><!-- /footer -->
 	</div>
 	<!-- end of the info of variety page -->
-
-	<!-- Start of para page -->
+	
+	<!-- Start of para page..........................................................................................................PARA  -->
 	<div data-role="page" id="para" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
@@ -383,10 +251,10 @@
 		</div><!-- /header -->
 
 		<div role="main" class="ui-content">
-			
+
 			<button type='button' id='refresh'>Refresh</button>
 
-		Choix de l'user 
+			Choix de l'user
 			<ul id='todo-user'></ul>
 
 
@@ -402,9 +270,8 @@
 		</div><!-- /footer -->
 	</div>
 	<!-- end of the para page -->
-
-
-	<!-- Start of modif  page -->
+	
+	<!-- Start of modif  page.........................................................................................................MODIF PAGE -->
 	<div data-role="page" id="modif" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
@@ -415,30 +282,50 @@
 
 		<div role="main" class="ui-content">
 
+			<h1>User :</h1>
 			<form id='add-user'>
-				<button type='button' id="addUserCloud">Ajouter</button>
 
 				<div>
-					<label for="userNameAdd">User:</label>
+					<label for="userNameAdd">Name:</label>
 					<input type="text" name="userNameAdd" id="userNameAdd" value="">
 				</div>
 
+				<button type='button' id="addUserCloud">Ajouter</button>
+
+
 			</form>
 
+			<h1>Category :</h1>
 			<form id='add-category'>
-				<button type='button' id="addCategoryCloud">Ajouter</button>
 
 				<div>
-					<label for="categoryNameAdd">User:</label>
+					<label for="categoryNameAdd">Name:</label>
 					<input type="text" name="categoryNameAdd" id="categoryNameAdd" value="">
-					<label for="categoryInfoAdd">User:</label>
+					<label for="categoryInfoAdd">Info:</label>
 					<input type="text" name="categoryInfoAdd" id="categoryInfoAdd" value="">
-
 				</div>
+
+				<button type='button' id="addCategoryCloud">Ajouter</button>
+
 
 			</form>
 
 			<br />
+
+			<h1>Plants :</h1>
+			<form id='add-category'>
+
+				<div>
+					<label for="categoryPlantsAdd">Plants:</label>
+					<select id='todo-cat3'></select>
+					<label for="numPlants">Info:</label>
+					<input type="text" name="numPlants" id="numPlants" value="">
+				</div>
+
+				<button type='button' id="addPlantCloud">Ajouter</button>
+
+
+			</form>
 
 		</div><!-- /content -->
 
@@ -466,7 +353,7 @@
 	<script type="text/javascript" src="js/immotri.js"></script>
 
 	<script type="text/javascript">
-            app.initialize();
+		app.initialize();
 	</script>
 	<script>
 		$(document).on("pagecreate", function () {
@@ -491,7 +378,7 @@
 		});
 	</script>
 	<script>
-		
+
 	</script>
 
 
