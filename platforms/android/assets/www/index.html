@@ -19,10 +19,11 @@
 	-->
 	<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
 	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/test.css" />
+
 	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 	<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
-
 
 
 	<title>First Application</title>
@@ -52,16 +53,21 @@
 				</div>
 			</div>
 
+
+
 			<hr />
 			<center><div id="clock"></div></center>
 			<hr />
 			<center>
 				Info Meteo : <br />
+
 				<img src="img/logo.png" alt="Smiley face" height="100" width="225">
 			</center>
 			<br />
 			<hr />
-			<button id="testUser">testtt</button>
+
+			<a id="testtt" class="button">testtt</a>
+
 
 
 
@@ -72,11 +78,25 @@
 			</p>
 
 			Numero de la plante
-			<input type="number" name="num_plant"><br>
-			<a id="okkk" href="#plants" class="button_plants">Aller à la plante</a>
+			<input id="numeroPlant" type="number" name="num_plant"><br>
+			<center>
+				<a id="goPlantFromHome" href="#plants" class="button">Aller à la plante</a>
 
-			<br />
-			<a href="#cateogry" class="button">Accéder au listing des variétés</a>
+				<br />
+				<hr /><br />
+
+
+				<a href="#cateogry" class="button">Accéder au listing des variétés</a>
+				<br /> <br />
+
+				<a id="seeRemarks" href="#remarks" class="button">Voire remarques</a>
+
+
+
+
+			</center>
+
+
 
 		</div><!-- /content -->
 
@@ -88,11 +108,12 @@
 		</div><!-- /footer -->
 	</div>
 	<!-- end of the first page -->
-
 	<!-- Start of choose of variety page...........................................................................................CHOOSE OF VARIETY -->
 	<div data-role="page" id="cateogry" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
 			<h1>Nostras - Cloud</h1>
 		</div><!-- /header -->
 
@@ -112,7 +133,7 @@
 				<select id='todo-cat2'></select>
 			</p>
 
-			<a href="#infoVariety" class="button_variety" id="goVariety">Accéder à la variétés</a>
+			<a href="#infoVariety" class="button" id="goVariety">Accéder à la variétés</a>
 
 		</div><!-- /content -->
 
@@ -124,11 +145,12 @@
 		</div><!-- /footer -->
 	</div>
 	<!-- end of the choose of variety page -->
-
 	<!-- Start of info of variety page........................................................................................... INFO OF VARIETY -->
 	<div data-role="page" id="infoVariety" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
 			<h1>Nostras - Cloud</h1>
 		</div><!-- /header -->
 
@@ -151,8 +173,6 @@
 
 			<br /> <hr />
 
-			<!--	<a href="#addplants" class="button_variety">Ajouter plante</a> -->
-
 
 		</div><!-- /content -->
 
@@ -164,74 +184,113 @@
 		</div><!-- /footer -->
 	</div>
 	<!-- end of the info of variety page -->
-
 	<!-- Start of info of plants page............................................................................................PLANTS -->
 	<div data-role="page" id="plants" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
 			<h1>Nostras - Cloud</h1>
 		</div><!-- /header -->
 
 		<div role="main" class="ui-content">
-
 			<center>
 				<h1 id="titlePlant">  a</h1>
-				<a id="lastPlants"> LAST</a>
+				<a class="button" id="lastPlants"> LAST</a>
 
-				<a id="nextPlants"> NEXT</a>
+				<a class="button" id="nextPlants"> NEXT</a>
 				<hr />
+				<button id="capturePhoto">Capture Photo</button> <br>
+
 				Nom de la plante
 				<input type="text" name="nomPlants" id="nomPlants"><br>
 				Remarque
-				<input type="text" name="remarquePlants"><br>
-				size
-				<input type="text" name="sizePlants"><br>
-				Step
-				<input type="text" name="stepPlants"><br>
+				<textarea rows="4" cols="50" type="text" name="remarquePlants" id="remarquePlants"> </textarea>
+				<center>
+					<a class="button " id="addRemarks"> Add Remarque</a>
+
+					<br />
+
+					Size
+					<input type="number" name="sizePlants" id="sizePlants"><br>
+					<a class="button " id="addSize"> Add Size</a>
+
+
+				</center>
+
 			</center>
+
 
 			<br />
 			<hr />
-			History <br />
-			Remarques - Size - Step
-			<form>
-				<select name="flip-1" id="flip-1" data-role="slider">
-					<option value="off">Off</option>
-					<option value="on">On</option>
-				</select>
-				<select name="flip-2" id="flip-2" data-role="slider">
-					<option value="off">Off</option>
-					<option value="on">On</option>
-				</select>
-				<select name="flip-3" id="flip-3" data-role="slider">
-					<option value="off">Off</option>
-					<option value="on">On</option>
-				</select>
-			</form>
+			<h2>History</h2>
+			<br />
+			<center>
+				<div class="data-table data-table-init card">
+					<table>
+						<thead>
+							<tr>
 
-			<div id="ttest"></div>
+								<th class="label-cell">Remarque</th>
+								<th class="numeric-cell">Picture </th>
+								<th class="numeric-cell">Size</th>
 
-			<div id="historyRemarques" style="visibility: hidden">
-				<h2>Remarques</h2>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
 
-				<div>
+								<td class="label-cell">
+									<select name="flip-1" id="flip-1" data-role="slider">
+										<option value="off">Off</option>
+										<option value="on">On</option>
+									</select>
+								</td>
+								<td class="numeric-cell">
+									<select name="flip-2" id="flip-2" data-role="slider">
+										<option value="off">Off</option>
+										<option value="on">On</option>
+									</select>
+								</td>
+								<td class="numeric-cell">
+									<select name="flip-3" id="flip-3" data-role="slider">
+										<option value="off">Off</option>
+										<option value="on">On</option>
+									</select>
+								</td>
 
+							</tr>
+
+						</tbody>
+					</table>
 				</div>
+			</center>
 
-				<div id="historyStep" style="visibility: hidden">
-					<h2>Step : </h2>
 
-				</div>
 
-				<div id="historySize" style="visibility: hidden">
-					<h2>Size : </h2>
-
-				</div>
-
+			<div id="historyRemarques" hidden>
+				<h2>Remarques : </h2>
+				<div id="divRemarques"></div>
 			</div>
 
-		</div><!-- /content -->
+			<div id="historyPicture" hidden>
+				<h2>Pictures : </h2>
+				<div id="box">
 
+				</div>
+			</div>
+
+			<div id="historySize" hidden>
+				<h2>Size : </h2>
+				<div id="divSize"></div>
+
+			</div>
+			<br />
+			<br />
+
+
+
+		</div><!-- /content -->
 		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 			<center>
 				© Nostras 2017
@@ -240,7 +299,6 @@
 		</div><!-- /footer -->
 	</div>
 	<!-- end of the info of variety page -->
-	
 	<!-- Start of para page..........................................................................................................PARA  -->
 	<div data-role="page" id="para" data-theme="a">
 
@@ -270,7 +328,6 @@
 		</div><!-- /footer -->
 	</div>
 	<!-- end of the para page -->
-	
 	<!-- Start of modif  page.........................................................................................................MODIF PAGE -->
 	<div data-role="page" id="modif" data-theme="a">
 
@@ -337,9 +394,38 @@
 		</div><!-- /footer -->
 	</div>
 	<!-- end of the modif page -->
+	<!-- Start of Remarks  page.........................................................................................................Remarks PAGE -->
+	<div data-role="page" id="remarks" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+
+			<div id="divRemarquesAll"></div>
+
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the Remarks page -->
 
 
 
+
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript">
+
+	</script>
 
 	<script src="js/jquery.mobil-1.4.5.min.js"></script>
 	<script src="js/jquery11.js"></script>
@@ -349,36 +435,12 @@
 	<script type="text/javascript" src="js/clockk.js"></script>
 
 	<script type="text/javascript" src="js/clock.js"></script>
+	<script type="text/javascript" src="js/camera.js"></script>
 
 	<script type="text/javascript" src="js/immotri.js"></script>
 
 	<script type="text/javascript">
 		app.initialize();
-	</script>
-	<script>
-		$(document).on("pagecreate", function () {
-			$(document).on("pagecontainershow", function () {
-				$(".ui-content").height(getRealContentHeight());
-			})
-
-			$(window).on("resize orientationchange", function () {
-				$(".ui-content").height(getRealContentHeight());
-			})
-
-			function getRealContentHeight() {
-				var activePage = $.mobile.pageContainer.pagecontainer("getActivePage"),
-					screen = $.mobile.getScreenHeight(),
-					header = $(".ui-header").hasClass("ui-header-fixed") ? $(".ui-header").outerHeight() - 1 : $(".ui-header").outerHeight(),
-					footer = $(".ui-footer").hasClass("ui-footer-fixed") ? $(".ui-footer").outerHeight() - 1 : $(".ui-footer").outerHeight(),
-					contentMargins = $(".ui-content", activePage).outerHeight() - $(".ui-content", activePage).height();
-				var contentHeight = screen - header - footer - contentMargins;
-
-				return contentHeight;
-			}
-		});
-	</script>
-	<script>
-
 	</script>
 
 

@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\www",
+    "\\www\\css",
     "\\www\\js"
   ],
-  "SelectedNode": "\\www\\js\\immotri.js",
+  "SelectedNode": "\\www\\js\\index.js",
   "PreviewInSolutionExplorer": false
 }

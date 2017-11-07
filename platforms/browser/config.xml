@@ -1,17 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
-    <feature name="Camera">
-        <param name="browser-package" value="Camera" />
-    </feature>
+<widget id="com.ruvy.CloudNostras" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Device">
         <param name="browser-package" value="Device" />
     </feature>
-    <name>helloworld</name>
     <description>
         Hello World sample application that responds to the deviceready event.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <feature name="Camera">
+        <param name="browser-package" value="Camera" />
+    </feature>
+    <name>CloudNostras</name>
+    <description>
+        Projet Cloud Haaga-Helia for Nostras SA (CH)
+    </description>
+    <author email="info@ruvy.ch" href="http://ruvy.ch">
+        Roberts and Loïc
     </author>
     <content src="index.html" />
     <access origin="*" />

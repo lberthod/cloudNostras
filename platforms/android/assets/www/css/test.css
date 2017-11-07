@@ -1,0 +1,36 @@
+﻿a.button {
+	-webkit-appearance: button;
+	-moz-appearance: button;
+	text-decoration: none;
+	color: initial;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#box img {
+	margin-top: 48px;
+	width: 300px;
+	height: 225px;
+}
+
+.rotate90 {
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	transform: rotate(270deg);
+}
+
+#box {
+	height: 320px;
+	background-color: gray;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+	#box::-webkit-scrollbar {
+		display: none;
+}

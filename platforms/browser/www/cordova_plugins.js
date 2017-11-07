@@ -15,36 +15,6 @@ module.exports = [
         "runs": true
     },
     {
-        "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-        "id": "cordova-plugin-camera.Camera",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "Camera"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-        "id": "cordova-plugin-camera.CameraPopoverOptions",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "CameraPopoverOptions"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-camera/www/Camera.js",
-        "id": "cordova-plugin-camera.camera",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "navigator.camera"
-        ]
-    },
-    {
-        "file": "plugins/cordova-plugin-camera/src/browser/CameraProxy.js",
-        "id": "cordova-plugin-camera.CameraProxy",
-        "pluginId": "cordova-plugin-camera",
-        "runs": true
-    },
-    {
         "file": "plugins/cordova-plugin-contacts/www/contacts.js",
         "id": "cordova-plugin-contacts.contacts",
         "pluginId": "cordova-plugin-contacts",
@@ -648,13 +618,42 @@ module.exports = [
         "clobbers": [
             "WindowsAzure"
         ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+        "id": "cordova-plugin-camera.Camera",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "Camera"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+        "id": "cordova-plugin-camera.CameraPopoverOptions",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "CameraPopoverOptions"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/www/Camera.js",
+        "id": "cordova-plugin-camera.camera",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "navigator.camera"
+        ]
+    },
+    {
+        "file": "plugins/cordova-plugin-camera/src/browser/CameraProxy.js",
+        "id": "cordova-plugin-camera.CameraProxy",
+        "pluginId": "cordova-plugin-camera",
+        "runs": true
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "cordova-plugin-battery-status": "1.1.2",
-    "cordova-plugin-camera": "2.1.1",
     "cordova-plugin-console": "1.0.7",
     "cordova-plugin-contacts": "2.0.1",
     "cordova-plugin-device": "1.1.6",
@@ -676,7 +675,9 @@ module.exports.metadata =
     "cordova-plugin-email": "1.2.6",
     "cordova-plugin-email-composer": "0.8.7",
     "cordova-sqlite-storage": "1.4.8",
-    "cordova-plugin-ms-azure-mobile-apps": "2.0.0"
+    "cordova-plugin-ms-azure-mobile-apps": "2.0.0",
+    "cordova-plugin-compat": "1.1.0",
+    "cordova-plugin-camera": "2.4.1"
 }
 // BOTTOM OF METADATA
 });

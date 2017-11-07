@@ -10,7 +10,7 @@
     "cordova-plugin-camera": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-camera@~2.1.1"
+            "id": "cordova-plugin-camera@2.4.1"
         },
         "is_top_level": true,
         "variables": {}
@@ -82,7 +82,7 @@
     "cordova-plugin-file-transfer": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-file-transfer@~1.5.0"
+            "id": "cordova-plugin-file-transfer@1.6.1"
         },
         "is_top_level": true,
         "variables": {}
@@ -187,6 +187,14 @@
         "source": {
             "type": "registry",
             "id": "cordova-sqlite-storage@1.4.8"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat@^1.1.0"
         },
         "is_top_level": false,
         "variables": {}
