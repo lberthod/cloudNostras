@@ -246,6 +246,8 @@
 			.attr('data-user-id', userr.id)
 			.append($('<p class="item-name">').text(userr.name))
 			.append($('<button class="user-choose">Choose</button>'))
+			.append($('<button class="user-delete">Delete</button>'))
+
 			.append($('<br>'))
 			;
 	}
@@ -284,7 +286,7 @@
 		var itemId = getUser(event.currentTarget);
 		userTable
 			.del({ id: itemId })   // Async send the deletion to backend
-			.then(displayItems, handleError); // Update the UI
+			.then(displayUsers, handleError); // Update the UI
 		event.preventDefault();
 	}
 
@@ -326,10 +328,14 @@
 		var listItems = $.map(items, createCategory);
 		var listItems1 = $.map(items, createCategory);
 		var listItems2 = $.map(items, createCategory);
+		var listItems3 = $.map(items, createCategory);
+
 
 		$('#todo-cat').empty().append(listItems).toggle(listItems.length > 0);
 		$('#todo-cat2').empty().append(listItems1).toggle(listItems1.length > 0);
 		$('#todo-cat3').empty().append(listItems2).toggle(listItems2.length > 0);
+		$('#todo-cat4').empty().append(listItems2).toggle(listItems2.length > 0);
+
 
 		$('.cat-delete').on('click', deleteCategory);
 		$('.cat-choose').on('click', chooseCategory);
