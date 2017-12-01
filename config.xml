@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.Ex2" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>Ex2 - Mobile Prog</name>
+<widget id="com.ruvy.CloudNostras" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>CloudNostras</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Projet Cloud Haaga-Helia for Nostras SA (CH)
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="info@ruvy.ch" href="http://ruvy.ch">
+        Roberts and Loïc
     </author>
     <content src="index.html" />
     <preference name="DisallowOverscroll" value="true" />
@@ -97,15 +97,13 @@
     <engine name="android" spec="~6.2.3" />
     <engine name="browser" spec="~4.1.0" />
     <plugin name="cordova-plugin-battery-status" spec="~1.1.1" />
-    <plugin name="cordova-plugin-camera" spec="~2.1.1" />
+    <plugin name="cordova-plugin-camera" spec="^2.4.1" />
     <plugin name="cordova-plugin-console" spec="~1.0.2" />
     <plugin name="cordova-plugin-contacts" spec="~2.0.1" />
     <plugin name="cordova-plugin-device" spec="~1.1.1" />
     <plugin name="cordova-plugin-device-motion" spec="~1.2.0" />
     <plugin name="cordova-plugin-device-orientation" spec="~1.0.2" />
     <plugin name="cordova-plugin-dialogs" spec="~1.2.0" />
-    <plugin name="cordova-plugin-email" spec="^1.2.6" />
-    <plugin name="cordova-plugin-email-composer" spec="^0.8.7" />
     <plugin name="cordova-plugin-file" spec="~4.1.1" />
     <plugin name="cordova-plugin-file-transfer" spec="~1.5.0" />
     <plugin name="cordova-plugin-geolocation" spec="~2.1.0" />
@@ -113,11 +111,13 @@
     <plugin name="cordova-plugin-inappbrowser" spec="~1.3.0" />
     <plugin name="cordova-plugin-media" spec="~2.2.0" />
     <plugin name="cordova-plugin-media-capture" spec="~1.2.0" />
-    <plugin name="cordova-plugin-ms-azure-mobile-apps" spec="^2.0.0" />
     <plugin name="cordova-plugin-network-information" spec="~1.2.0" />
-    <plugin name="cordova-plugin-sendgrid" spec="1.0.9" />
     <plugin name="cordova-plugin-splashscreen" spec="~3.2.1" />
     <plugin name="cordova-plugin-statusbar" spec="~2.1.2" />
-    <plugin name="cordova-plugin-vibration" spec="~2.1.0" />
+    <plugin name="cordova-plugin-vibration" spec="^2.1.5" />
     <plugin name="cordova-plugin-whitelist" spec="~1.2.1" />
+    <plugin name="cordova-plugin-email" spec="^1.2.6" />
+    <plugin name="cordova-plugin-email-composer" spec="^0.8.7" />
+    <plugin name="cordova-plugin-ms-azure-mobile-apps" spec="^2.0.0" />
+    <plugin name="cordova-plugin-sendgrid" spec="1.0.9" />
 </widget>

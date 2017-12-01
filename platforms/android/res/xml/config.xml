@@ -1,10 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.Ex2" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+<widget id="com.ruvy.CloudNostras" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <feature name="Battery">
         <param name="android-package" value="org.apache.cordova.batterystatus.BatteryListener" />
-    </feature>
-    <feature name="Camera">
-        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
     </feature>
     <feature name="File">
         <param name="android-package" value="org.apache.cordova.file.FileUtils" />
@@ -70,12 +67,15 @@
     <feature name="SQLitePlugin">
         <param name="android-package" value="io.sqlc.SQLitePlugin" />
     </feature>
-    <name>Ex2 - Mobile Prog</name>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <name>CloudNostras</name>
     <description>
-        Hello World sample application that responds to the deviceready event.
+        Projet Cloud Haaga-Helia for Nostras SA (CH)
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+    <author email="info@ruvy.ch" href="http://ruvy.ch">
+        Roberts and Loïc
     </author>
     <content src="index.html" />
     <access origin="*" />

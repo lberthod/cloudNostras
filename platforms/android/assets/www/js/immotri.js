@@ -1,20 +1,7 @@
 (function ($) {
 	"use strict";
 
-	var addition = function () {
-		var myswitch = $(this);
-		var show = myswitch[0].selectedIndex == 1 ? true : false;
 
-		if (show) {
-
-			$('#show-me').fadeIn('slow');
-			$('#first-me').fadeOut();
-		} else {
-
-			$('#first-me').fadeIn('slow');
-			$('#show-me').fadeOut();
-		}
-	};
 
 	var flip1 = function () {
 		var myswitch = $(this);
@@ -22,11 +9,12 @@
 
 		if (show) {
 			$("#historyRemarques").insertAfter("#ttest");   
-			$('#historyRemarques').css('visibility', 'visible');
+			$('#historyRemarques').show();
 
 		} else {
+			$("#historyRemarques").insertAfter("#historyPicture");   
 
-			$('#historyRemarques').css('visibility', 'hidden');
+			$('#historyRemarques').hide();
 		}
 	};
 
@@ -35,12 +23,13 @@
 		var show = myswitch[0].selectedIndex == 1 ? true : false;
 
 		if (show) {
-			$("#historyStep").insertAfter("#ttest");   
-			$('#historyStep').css('visibility', 'visible');
+			$("#historyPicture").insertAfter("#ttest");   
+			$('#historyPicture').show();
 
 		} else {
+			$("#historyPicture").insertAfter("#historyRemarques");   
 
-			$('#historyStep').css('visibility', 'hidden');
+			$('#historyPicture').hide();
 		}
 	};
 
@@ -51,22 +40,19 @@
 		if (show) {
 			$("#historySize").insertAfter("#ttest");   
 
-			$('#historySize').css('visibility', 'visible');
+			$('#historySize').show();
 
 		} else {
+			$("#historySize").insertAfter("#historyRemarques");   
 
-			$('#historySize').css('visibility', 'hidden');
+			$('#historySize').hide();
 		}
 	};
-
-
 
 	$(document).on("ready", function () {
 		$('#flip-1').on('change', flip1);
 		$('#flip-2').on('change', flip2);
 		$('#flip-3').on('change', flip3);
-
-
 
 	});
 

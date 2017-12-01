@@ -1,345 +1,513 @@
 ﻿<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
 
 <head>
-    <meta charset="utf-8"/>
-    <meta name="format-detection" content="telephone=no"/>
-    <meta name="msapplication-tap-highlight" content="no"/>
-    <meta name="viewport"
-          content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
-    <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    <!-- Good default declaration:
-    * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-    * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-    * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-        * Enable inline JS: add 'unsafe-inline' to default-src
-        * Enable eval(): add 'unsafe-eval' to default-src
-    * Create your own at http://cspisawesome.com
-    -->
-    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
-    <link rel="stylesheet" href="themes/mytheme.css" />
-<link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" /><link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <title>First Application</title>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport"
+		  content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	<!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
+	<!-- <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+	<!-- Good default declaration:
+	* gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+	* https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+	* Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+		* Enable inline JS: add 'unsafe-inline' to default-src
+		* Enable eval(): add 'unsafe-eval' to default-src
+	* Create your own at http://cspisawesome.com
+	-->
+	<!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<link rel="stylesheet" href="css/test.css" />
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<script src="http://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
+
+
+
+	<title>First Application</title>
 </head>
+
+
 
 <body>
 
-	<!-- Start of first page -->
-	<div data-role="page" id="home">
+	<!-- Start of first page.........................................................................................................HOME PAGE -->
+	<div data-role="page" id="home" data-theme="a">
 
-		<div data-role="header" data-position="fixed" data-tap-toggle="false">
-			<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goPara" href="#para" class="ui-btn ui-icon-user ui-btn-icon-notext ui-corner-left"></a>
+			<a id="goPara" href="#modif" class="ui-btn ui-icon-bullets ui-btn-icon-notext ui-corner-right"></a>
 
-			<h1>Immotri</h1>
+
+			<h1>Nostras - Cloud</h1>
 		</div><!-- /header -->
 
 		<div role="main" class="ui-content">
+			<div class="my">
 
-			<img src="img/logo.jpeg" alt="Logo Immotri">
-
-
-
-			<fieldset data-role="controlgroup">
-				<legend>Je veux acheter un-e:</legend>
-
-				<input type="checkbox" name="checkbox-villa" id="checkbox-villa">
-				<label for="checkbox-villa">Villa</label>
-				<div id="infoVilla" style=visibility: hidden>
-					<label for="pieceVilla">Nombre de pièces:</label>
-					<input type="number" name="pieceVilla" id="pieceVilla" value="">
-					<label for="surfaceVilla">Taille en m2 :</label>
-					<input type="number" name="surfaceVilla" id="surfaceVilla" value="">
+				<div id="deviceready" class="blink">
+					<p class="event listening">Connecting to Device</p>
+					<p class="event received"></p>
 				</div>
-
-				<input type="checkbox" name="checkbox-appartement" id="checkbox-appartement">
-				<label for="checkbox-appartement">Appartement</label>
-				<div id="infoAppartement" style=visibility: hidden>
-					<label for="pieceAppartement">Nombre de pièces:</label>
-					<input type="number" name="pieceAppartement" id="pieceAppartement" value="">
-					<label for="surfaceAppartement">Taille en m2 :</label>
-					<input type="number" name="surfaceAppartement" id="surfaceAppartement" value="">
-				</div>
-
-				<input type="checkbox" name="checkbox-terrain" id="checkbox-terrain">
-				<label for="checkbox-terrain">Terrain</label>
-				<div id="infoTerrain" style=visibility: hidden>
-					<label for="surfaceTerrain">Taille en m2 :</label>
-					<input type="number" name="surfaceTerrain" id="surfaceTerrain" value="">
-				</div>
-
-				<input type="checkbox" name="checkbox-construire" id="checkbox-construire">
-				<label for="checkbox-construire">Je veux construire</label>
-				<div id="infoConstruire" style=visibility: hidden></div>
-
-				<input type="checkbox" name="checkbox-vendre" id="checkbox-vendre">
-				<label for="checkbox-vendre">J'ai un bien à vendre</label>
-			</fieldset>
-
-			<label for="remarques">Remarques:</label>
-			<textarea cols="40" rows="8" name="remarques" id="remarques"></textarea>
-			<div>
-				<div data-role="collapsibleset">
-					<p>Localisation (par district puis par commune) : </p>
-
-					<ul data-role="listview">
-						<li data-role="collapsible">
-							<h3>Sierre-Sion-Hérens</h3>
-							<ul data-role="listview">
-
-								<li>
-									<ul data-role="listview">
-										<li data-role="collapsible">
-											<h1>Sierre</h1>
-											<ul data-role="listview">
-												<li>
-													<input type="checkbox" name="Anniviers" id="Anniviers" />
-													<label for="Anniviers">Anniviers</label>
-
-													<input type="checkbox" name="Chalais" id="Chalais" />
-													<label for="Chalais">Chalais</label>
-
-													<input type="checkbox" name="Chippis" id="Chippis" />
-													<label for="Chippis">Chippis</label>
-
-													<input type="checkbox" name="Crans-Montana" id="Crans-Montana" />
-													<label for="Crans-Montana">Crans-Montana</label>
-
-													<input type="checkbox" name="Grone" id="Grone" />
-													<label for="Grone">Grône</label>
-
-													<input type="checkbox" name="Icogne" id="Icogne" />
-													<label for="Icogne">Icogne</label>
-
-													<input type="checkbox" name="Miège" id="Miège" />
-													<label for="Miège">Miège</label>
-
-													<input type="checkbox" name="SaintLeonard" id="SaintLeonard" />
-													<label for="SaintLeonard">Saint-Léonard</label>
-
-													<input type="checkbox" name="Sierre" id="Sierre" />
-													<label for="Sierre">Sierre</label>
-
-													<input type="checkbox" name="Venthone" id="Venthone" />
-													<label for="Venthone">Venthône</label>
-
-													<input type="checkbox" name="Veyras" id="Veyras" />
-													<label for="Veyras">Veyras</label>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-
-								<li>
-									<ul data-role="listview">
-										<li data-role="collapsible">
-											<h1>Sion</h1>
-											<ul data-role="listview">
-												<li>
-													<input type="checkbox" name="ArbazArbaz" id="Arbaz" />
-													<label for="Arbaz">Arbaz</label>
-
-													<input type="checkbox" name="Grimisuat" id="Grimisuat" />
-													<label for="Grimisuat">Grimisuat</label>
-
-													<input type="checkbox" name="Saviese" id="Saviese" />
-													<label for="Saviese">Savièse</label>
-
-													<input type="checkbox" name="Sion" id="Sion" />
-													<label for="Sion">Sion</label>
-
-													<input type="checkbox" name="Veysonnaz" id="Veysonnaz" />
-													<label for="Veysonnaz">Veysonnaz</label>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-
-								<li>
-									<ul data-role="listview">
-										<li data-role="collapsible">
-											<h1>Hérens</h1>
-											<ul data-role="listview">
-												<li>
-													<input type="checkbox" name="Ayent" id="Ayent" />
-													<label for="Ayent">Ayent</label>
-
-													<input type="checkbox" name="Evolene" id="Evolene" />
-													<label for="Evolene">Evolène</label>
-
-													<input type="checkbox" name="Heremence" id="Heremence" />
-													<label for="Heremence">Hérémence</label>
-
-													<input type="checkbox" name="LesAgettes" id="LesAgettes" />
-													<label for="LesAgettes">Les Agettes</label>
-
-													<input type="checkbox" name="SaintMartin" id="SaintMartin" />
-													<label for="SaintMartin">Saint-Martin</label>
-
-													<input type="checkbox" name="Vex" id="Vex" />
-													<label for="Vex">Vex</label>
-
-													<input type="checkbox" name="MontNoble" id="MontNoble" />
-													<label for="MontNoble">Mont-Noble</label>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-
-							</ul>
-						</li>
-					</ul>
-
-				</div>
-				<br />
 			</div>
 
-			<div>
-				Budget (en CHF) de
-				<input type="number" name="number" pattern="[0-9]*" id="number-pattern" value="">
-				à
-				<input type="number" name="number" pattern="[0-9]*" id="number-pattern" value="">
-			</div>
+			<hr />
+			<center><div id="clock"></div></center>
+			<hr />
+			<center>
+				Info Meteo : <br />
 
-			<div>
-				<h3>Coordonnées :</h3>
-				<label for="nom">Nom:</label>
-				<input type="text" name="nom" id="nom" value="">
+				<img src="img/logo.png" alt="Smiley face" height="100" width="225">
+			</center>
+			<br />
+			<hr />
 
-				<label for="prenom">Prénom:</label>
-				<input type="text" name="prenom" id="prenom" value="">
 
-				<label for="tel">Numéro de natel:</label>
-				<input type="tel" name="tel" id="tel" value="">
-
-				<label for="mail">E-mail:</label>
-				<input type="text" name="mail" id="mail" value="">
-
-			</div>
 
 			<p>
-				<center>L'appel d'offre est gratuit et sans engagement</center>
+				<label for="le_nom">Choix de la variété</label>
+				<select id='todo-cat'></select>
+
 			</p>
 
-			<a href="#merci" id="submit" class="ui-btn">Confirmer</a>
+			Numero de la plante
+			<input id="numeroPlant" type="number" name="num_plant"><br>
+			<center>
+				<a id="goPlantFromHome" href="#plants" class="button">Aller à la plante</a>
+
+				<br />
+				<hr /><br />
+
+
+				<a href="#cateogry" class="button">Accéder au listing des variétés</a>
+				<br /> <br />
+
+				<a id="seeRemarks" href="#remarks" class="button">Voire remarques</a>
+
+
+
+
+			</center>
+
+
 
 		</div><!-- /content -->
 
 		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 			<center>
-				© Immotri 2017
-				<a href="#">Informations</a>
+				© Nostras 2017
+				<a href="#">Nostras</a>
 			</center>
 		</div><!-- /footer -->
 	</div>
+	<!-- end of the first page -->
+	<!-- Start of choose of variety page...........................................................................................CHOOSE OF VARIETY -->
+	<div data-role="page" id="cateogry" data-theme="a">
 
-	<!-------------------------------------------------------------------------------------- Start of first page -->
-	<div data-role="page" id="merci">
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
 
-		<div data-role="header" data-position="fixed" data-tap-toggle="false">
-			<a href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
-
-			<h1>Validation</h1>
+			<h1>Nostras - Cloud</h1>
 		</div><!-- /header -->
+
 		<div role="main" class="ui-content">
-			<p>Votre demande a bien été transmise au diverses agences immobilières partenaires.</p>
 
-			<label for="select-choice-share">Partage Immotri ! </label>
-			<select name="select-choice-share" id="select-choice-share" data-icon="forward" data-mini="true" data-iconpos="left" onchange="handleSocialShare()">
-				<option value="facebook">Partage sur Facebook</option>
-				<!--   <option value="twitter">Tweet this</option> -->
-				<option value="email">Envoie par mail</option>
-			</select>
+			<hr />
 
-			<form action="http://ruvy.ch/mail.php" method="POST">
-				<div class="group">
-					<input id="email1" name="email" placeholder="Email" type="hidden" required>
-					<span class="bar"></span>
+			<center>
+				.... <br />
+			</center>
+			<br />
+			<hr />
+
+
+			<p>
+				<label for="le_nom">Choix de la variété</label>
+				<select id='todo-cat2'></select>
+			</p>
+
+			<a href="#infoVariety" class="button" id="goVariety">Accéder à la variétés</a>
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#home">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the choose of variety page -->
+	<!-- Start of info of variety page........................................................................................... INFO OF VARIETY -->
+	<div data-role="page" id="infoVariety" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+
+			<h1 id="nameVariety"></h1>
+			<center>
+
+				<h3>Informations</h3>
+				<div id="infoVariety1">
 				</div>
-				<div class="group">
-					<input id="envoyer" value="Send" type="submit">
+
+
+			</center>
+
+			<br />
+			<hr />
+			<ul id='todo-plants'></ul>
+
+
+			<br /> <hr />
+
+			<!--	<a href="#addplants" class="button_variety">Ajouter plante</a> -->
+
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#home">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the info of variety page -->
+	<!-- Start of info of plants page............................................................................................PLANTS -->
+	<div data-role="page" id="plants" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+
+			<center>
+				<h1 id="titlePlant">  a</h1>
+				<a class="button" id="lastPlants"> LAST</a>
+
+				<a class="button" id="nextPlants"> NEXT</a>
+				<hr />
+				Nom de la plante
+				<input type="text" name="nomPlants" id="nomPlants"><br>
+				Remarque
+				<textarea rows="4" cols="50" type="text" name="remarquePlants" id="remarquePlants"> </textarea>
+				<center>
+					<a class="button " id="addRemarks"> Add Remarque</a>
+				</center>
+				<br />
+
+				Size
+				<input type="text" name="sizePlants"><br>
+
+				Step
+				<input type="text" name="stepPlants"><br>
+
+			</center>
+
+			<br />
+			<hr />
+			History <br />
+			<center>
+				<div class="data-table data-table-init card">
+					<table>
+						<thead>
+							<tr>
+
+								<th class="label-cell">Remarques</th>
+								<th class="numeric-cell">Step </th>
+								<th class="numeric-cell">Size</th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+
+								<td class="label-cell">
+									<select name="flip-1" id="flip-1" data-role="slider">
+										<option value="off">Off</option>
+										<option value="on">On</option>
+									</select>
+								</td>
+								<td class="numeric-cell">
+									<select name="flip-2" id="flip-2" data-role="slider">
+										<option value="off">Off</option>
+										<option value="on">On</option>
+									</select>
+								</td>
+								<td class="numeric-cell">
+									<select name="flip-3" id="flip-3" data-role="slider">
+										<option value="off">Off</option>
+										<option value="on">On</option>
+									</select>
+								</td>
+
+							</tr>
+
+						</tbody>
+					</table>
 				</div>
-			</form>
+			</center>
+
+
+
+			<div id="historyRemarques" style="visibility: hidden">
+				<h2>Remarques : </h2>
+				<div id="divRemarques"></div>
+			</div>
+
+			<div id="historyStep" style="visibility: hidden">
+				<h2>Step : </h2>
+
+			</div>
+
+			<div id="historySize" style="visibility: hidden">
+				<h2>Size : </h2>
+
+			</div>
 
 
 
 		</div><!-- /content -->
+
 		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
 			<center>
-				© Immotri 2017
-				<a href="#">Informations</a>
+				© Nostras 2017
+				<a href="#home">Nostras</a>
 			</center>
 		</div><!-- /footer -->
-	</div><!-- /page -->
+	</div>
+	<!-- end of the info of variety page -->
+	<!-- Start of para page..........................................................................................................PARA  -->
+	<div data-role="page" id="para" data-theme="a">
 
-</body>
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+
+			<button type='button' id='refresh'>Refresh</button>
+
+			Choix de l'user
+			<ul id='todo-user'></ul>
+
+
+			<br />
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the para page -->
+	<!-- Start of modif  page.........................................................................................................MODIF PAGE -->
+	<div data-role="page" id="modif" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+
+			<h1>User :</h1>
+			<form id='add-user'>
+
+				<div>
+					<label for="userNameAdd">Name:</label>
+					<input type="text" name="userNameAdd" id="userNameAdd" value="">
+				</div>
+
+				<button type='button' id="addUserCloud">Ajouter</button>
+
+
+			</form>
+
+			<h1>Category :</h1>
+			<form id='add-category'>
+
+				<div>
+					<label for="categoryNameAdd">Name:</label>
+					<input type="text" name="categoryNameAdd" id="categoryNameAdd" value="">
+					<label for="categoryInfoAdd">Info:</label>
+					<input type="text" name="categoryInfoAdd" id="categoryInfoAdd" value="">
+				</div>
+
+				<button type='button' id="addCategoryCloud">Ajouter</button>
+
+
+			</form>
+
+			<br />
+
+			<h1>Plants :</h1>
+			<form id='add-category'>
+
+				<div>
+					<label for="categoryPlantsAdd">Plants:</label>
+					<select id='todo-cat3'></select>
+					<label for="numPlants">Info:</label>
+					<input type="text" name="numPlants" id="numPlants" value="">
+				</div>
+
+				<button type='button' id="addPlantCloud">Ajouter</button>
+
+
+			</form>
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the modif page -->
+	<!-- Start of Remarks  page.........................................................................................................Remarks PAGE -->
+	<div data-role="page" id="remarkks" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+
+			<div id="divRemarquesAll"></div>
+
+
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the Remarks page -->
+
+	<!-- Start of Remarks  page.........................................................................................................Remarks PAGE -->
+	<div data-role="page" id="remarks" data-theme="a">
+
+		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-theme="a">
+			<a id="goHome" href="#home" class="ui-btn ui-icon-home ui-btn-icon-notext ui-corner-all"></a>
+
+			<h1>Nostras - Cloud</h1>
+		</div><!-- /header -->
+
+		<div role="main" class="ui-content">
+			<button onclick="getImage()">Upload a Photo</button>
 
 
 
-<script type="text/javascript" src="cordova.js"></script>
-<script type="text/javascript" src="js/index.js"></script>
-<script type="text/javascript" src="js/calculator.js"></script>
-<script type="text/javascript" src="js/message.js"></script>
-<script type="text/javascript" src="js/immotri.js"></script>
-<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		</div><!-- /content -->
+
+		<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+			<center>
+				© Nostras 2017
+				<a href="#">Nostras</a>
+			</center>
+		</div><!-- /footer -->
+	</div>
+	<!-- end of the Remarks page -->
 
 
-
-
-<script type="text/javascript">
-	$(document).on("pagecreate", function () {
-		$(document).on("pagecontainershow", function () {
-			$(".ui-content").height(getRealContentHeight());
-		})
-
-		$(window).on("resize orientationchange", function () {
-			$(".ui-content").height(getRealContentHeight());
-		})
-
-		function getRealContentHeight() {
-			var activePage = $.mobile.pageContainer.pagecontainer("getActivePage"),
-				screen = $.mobile.getScreenHeight(),
-				header = $(".ui-header").hasClass("ui-header-fixed") ? $(".ui-header").outerHeight() - 1 : $(".ui-header").outerHeight(),
-				footer = $(".ui-footer").hasClass("ui-footer-fixed") ? $(".ui-footer").outerHeight() - 1 : $(".ui-footer").outerHeight(),
-				contentMargins = $(".ui-content", activePage).outerHeight() - $(".ui-content", activePage).height();
-			var contentHeight = screen - header - footer - contentMargins;
-
-			return contentHeight;
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript">
+		function getImage() {
+			navigator.camera.getPicture(uploadPhoto, function (message) {
+				alert('get picture failed');
+			}, {
+					quality: 100,
+					destinationType: navigator.camera.DestinationType.FILE_URI,
+					sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+				});
 		}
-	});
 
-	app.initialize();
+		function uploadPhoto(imageURI) {
+			var options = new FileUploadOptions();
+			options.fileKey = "file";
+			options.fileName = imageURI.substr(imageURI.lastIndexOf('/') + 1);
+			options.mimeType = "image/jpeg";
+			console.log(options.fileName);
+			var params = new Object();
+			params.value1 = "test";
+			params.value2 = "param";
+			options.params = params;
+			options.chunkedMode = false;
 
+			var ft = new FileTransfer();
+			ft.upload(imageURI, "http://192.168.1.4/phonegap/upload/upload.php", function (result) {
+				console.log(JSON.stringify(result));
+			}, function (error) {
+				console.log(JSON.stringify(error));
+			}, options);
+		}
+	</script>
 
+	<script src="js/jquery.mobil-1.4.5.min.js"></script>
+	<script src="js/jquery11.js"></script>
 
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/clockk.js"></script>
 
-</script>
+	<script type="text/javascript" src="js/clock.js"></script>
+
+	<script type="text/javascript" src="js/immotri.js"></script>
+
+	<script type="text/javascript">
+		app.initialize();
+	</script>
+	<script>
+		$(document).on("pagecreate", function () {
+			$(document).on("pagecontainershow", function () {
+				$(".ui-content").height(getRealContentHeight());
+			})
+
+			$(window).on("resize orientationchange", function () {
+				$(".ui-content").height(getRealContentHeight());
+			})
+
+			function getRealContentHeight() {
+				var activePage = $.mobile.pageContainer.pagecontainer("getActivePage"),
+					screen = $.mobile.getScreenHeight(),
+					header = $(".ui-header").hasClass("ui-header-fixed") ? $(".ui-header").outerHeight() - 1 : $(".ui-header").outerHeight(),
+					footer = $(".ui-footer").hasClass("ui-footer-fixed") ? $(".ui-footer").outerHeight() - 1 : $(".ui-footer").outerHeight(),
+					contentMargins = $(".ui-content", activePage).outerHeight() - $(".ui-content", activePage).height();
+				var contentHeight = screen - header - footer - contentMargins;
+
+				return contentHeight;
+			}
+		});
+	</script>
+	<script>
+
+	</script>
+
 
 </body>
-
 </html>

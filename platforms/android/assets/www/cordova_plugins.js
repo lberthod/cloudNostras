@@ -9,38 +9,6 @@ module.exports = [
         ]
     },
     {
-        "id": "cordova-plugin-camera.Camera",
-        "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "Camera"
-        ]
-    },
-    {
-        "id": "cordova-plugin-camera.CameraPopoverOptions",
-        "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "CameraPopoverOptions"
-        ]
-    },
-    {
-        "id": "cordova-plugin-camera.camera",
-        "file": "plugins/cordova-plugin-camera/www/Camera.js",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "navigator.camera"
-        ]
-    },
-    {
-        "id": "cordova-plugin-camera.CameraPopoverHandle",
-        "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
-        "pluginId": "cordova-plugin-camera",
-        "clobbers": [
-            "CameraPopoverHandle"
-        ]
-    },
-    {
         "id": "cordova-plugin-file.DirectoryEntry",
         "file": "plugins/cordova-plugin-file/www/DirectoryEntry.js",
         "pluginId": "cordova-plugin-file",
@@ -551,13 +519,44 @@ module.exports = [
         "clobbers": [
             "WindowsAzure"
         ]
+    },
+    {
+        "id": "cordova-plugin-camera.Camera",
+        "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "Camera"
+        ]
+    },
+    {
+        "id": "cordova-plugin-camera.CameraPopoverOptions",
+        "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "CameraPopoverOptions"
+        ]
+    },
+    {
+        "id": "cordova-plugin-camera.camera",
+        "file": "plugins/cordova-plugin-camera/www/Camera.js",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "navigator.camera"
+        ]
+    },
+    {
+        "id": "cordova-plugin-camera.CameraPopoverHandle",
+        "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+        "pluginId": "cordova-plugin-camera",
+        "clobbers": [
+            "CameraPopoverHandle"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
     "cordova-plugin-battery-status": "1.1.2",
-    "cordova-plugin-camera": "2.1.1",
     "cordova-plugin-file": "4.0.0",
     "cordova-plugin-media-capture": "1.2.0",
     "cordova-plugin-console": "1.0.7",
@@ -579,7 +578,9 @@ module.exports.metadata =
     "cordova-plugin-email": "1.2.6",
     "cordova-plugin-email-composer": "0.8.7",
     "cordova-sqlite-storage": "1.4.8",
-    "cordova-plugin-ms-azure-mobile-apps": "2.0.0"
+    "cordova-plugin-ms-azure-mobile-apps": "2.0.0",
+    "cordova-plugin-compat": "1.1.0",
+    "cordova-plugin-camera": "2.4.1"
 };
 // BOTTOM OF METADATA
 });

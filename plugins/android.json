@@ -10,9 +10,6 @@
         "cordova-plugin-battery-status": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
-        "cordova-plugin-camera": {
-            "PACKAGE_NAME": "com.phonegap.helloworld"
-        },
         "cordova-plugin-media-capture": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
         },
@@ -72,6 +69,9 @@
         },
         "cordova-plugin-ms-azure-mobile-apps": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "com.ruvy.CloudNostras"
         }
     },
     "dependent_plugins": {
@@ -80,6 +80,9 @@
         },
         "cordova-sqlite-storage": {
             "PACKAGE_NAME": "com.phonegap.helloworld"
+        },
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.ruvy.CloudNostras"
         }
     }
 }
